@@ -3,19 +3,21 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-24 Thu 23:25 -->
+<!-- 2022-11-24 Thu 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs</title>
 <meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="./styles/normalize.css" />
+<link rel="alternate stylesheet" type="text/css" href="./styles/layout.css" />
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">Emacs</h1>
 
-<div id="outline-container-orgddbe79d" class="outline-2">
-<h2 id="orgddbe79d">System Crafters</h2>
-<div class="outline-text-2" id="text-orgddbe79d">
+<div id="outline-container-orgc4004dc" class="outline-2">
+<h2 id="orgc4004dc">System Crafters</h2>
+<div class="outline-text-2" id="text-orgc4004dc">
 <p>
 First of all I would like to acknowledge that half or more of my configuration is either taken directly from, or inspired by David Wilson's System Crafters YouTube videos and streams. I wouldn't have been able to create this configuration without the channel so I highly encourage you to check it out and subscribe.
 </p>
@@ -27,9 +29,9 @@ First of all I would like to acknowledge that half or more of my configuration i
 </div>
 </div>
 
-<div id="outline-container-org3c6a7b5" class="outline-2">
-<h2 id="org3c6a7b5">Installation</h2>
-<div class="outline-text-2" id="text-org3c6a7b5">
+<div id="outline-container-org6d9ce43" class="outline-2">
+<h2 id="org6d9ce43">Installation</h2>
+<div class="outline-text-2" id="text-org6d9ce43">
 <p>
 In the past I had used emacs on Arch based machines, but more recently I got a laptop with windows 11 installed and decided to keep it and try out WSL to see how it handles graphical applications. So far, it seems to work pretty well and feels like the least bad way to have access to both Linux and windows on the same computer. One minor drawback is that it is a minor pain to install Arch Linux on WSL, so I opted to just stick with Ubuntu. The issue with Ubuntu is that many of the packages in the Ubuntu Repository are fairly out of date and Emacs is no exception. Luckily this is fairly easy to do.
 </p>
@@ -49,9 +51,9 @@ Another issue I ran into in the past was that WSL did not have systemD in order 
 </div>
 
 
-<div id="outline-container-org9969529" class="outline-2">
-<h2 id="org9969529">Package management and load modules</h2>
-<div class="outline-text-2" id="text-org9969529">
+<div id="outline-container-org05e1c15" class="outline-2">
+<h2 id="org05e1c15">Package management and load modules</h2>
+<div class="outline-text-2" id="text-org05e1c15">
 <p>
 I use straight.el for package management so this code is necessary to install and set it up. If you want to use it with use-package blocks, you also need to add the code below. 
 </p>
@@ -96,9 +98,9 @@ Next I load the Elisp files in two directories. I made two directories to simply
 </div>
 </div>
 </div>
-<div id="outline-container-org1c1ced1" class="outline-2">
-<h2 id="org1c1ced1">Defaults</h2>
-<div class="outline-text-2" id="text-org1c1ced1">
+<div id="outline-container-orge7172c5" class="outline-2">
+<h2 id="orge7172c5">Defaults</h2>
+<div class="outline-text-2" id="text-orge7172c5">
 <p>
 Here I set some built in defaults to remove things like scroll bars, menus, remove the audible bell etc. I set up auto revert mode so that buffers are automatically updated to reflect changes to files from outside emacs, such as on the command line etc. I tell Emacs what modes I would like line numbers in and finally I tell emacs to put temporary files in my <code>/tmp/</code> folder (This is one of the first things I do as I find it incredibly annoying have these files spread all through my directories.)
 </p>
@@ -147,9 +149,9 @@ Here I set some built in defaults to remove things like scroll bars, menus, remo
 </div>
 </div>
 
-<div id="outline-container-org3cbd360" class="outline-2">
-<h2 id="org3cbd360">Evil Mode</h2>
-<div class="outline-text-2" id="text-org3cbd360">
+<div id="outline-container-org895085b" class="outline-2">
+<h2 id="org895085b">Evil Mode</h2>
+<div class="outline-text-2" id="text-org895085b">
 <p>
 Pretty basic evil mode setup. Two important things that I do here are make sure that the default behavior for <code>C-h</code> and <code>C-u</code> works. The bind for <code>C-g</code> binding is a nice touch, but I haven't fully gotten used to using it.  
 </p>
@@ -185,9 +187,9 @@ Pretty basic evil mode setup. Two important things that I do here are make sure 
 </div>
 </div>
 
-<div id="outline-container-orgeb7736a" class="outline-2">
-<h2 id="orgeb7736a">Themes</h2>
-<div class="outline-text-2" id="text-orgeb7736a">
+<div id="outline-container-org4e9304e" class="outline-2">
+<h2 id="org4e9304e">Themes</h2>
+<div class="outline-text-2" id="text-org4e9304e">
 <p>
 I rely heavily on Modus Themes for my theme because I really like how nicely it integrates into Emacs. I know some people are perhaps turned off by it's stark colors, but it is highly customizable and it is possible to use whatever colors you want. Doom Themes is another great package that has a lot more selection for color schemes.
 </p>
@@ -274,9 +276,9 @@ Popper probably belongs more in a window section. It creates a toggleable drawer
 </div>
 </div>
 
-<div id="outline-container-orgf00bb82" class="outline-2">
-<h2 id="orgf00bb82">Spell Checking</h2>
-<div class="outline-text-2" id="text-orgf00bb82">
+<div id="outline-container-orgc10a4db" class="outline-2">
+<h2 id="orgc10a4db">Spell Checking</h2>
+<div class="outline-text-2" id="text-orgc10a4db">
 <p>
 Here I set up the built in spell check in text mode, which comes in especially handy in org mode documents. Since that is where I use it almost exclusively, it might be worth adding it specifically to an org-mode hook, but this setup works fine for now.
 </p>
@@ -307,9 +309,9 @@ Hunspell itself is a separate command line program and has to be installed on yo
 </div>
 </div>
 
-<div id="outline-container-org879857b" class="outline-2">
-<h2 id="org879857b">Completion</h2>
-<div class="outline-text-2" id="text-org879857b">
+<div id="outline-container-org8dd7bc8" class="outline-2">
+<h2 id="org8dd7bc8">Completion</h2>
+<div class="outline-text-2" id="text-org8dd7bc8">
 <p>
 Which Key is a handy package that provides hints for key chords. When you hit a keybind it will give you possible follow up keys. The defaults work fine for me, but you can customize how long you want it to wait to give the hints. You can set it to take longer to open the buffer if you are fairly comfortable with your keybinds and don't want cluttering your screen unless your really need it. 
 </p>
@@ -620,9 +622,9 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
 </div>
 </div>
 
-<div id="outline-container-org293bebe" class="outline-2">
-<h2 id="org293bebe">Dired</h2>
-<div class="outline-text-2" id="text-org293bebe">
+<div id="outline-container-org6485431" class="outline-2">
+<h2 id="org6485431">Dired</h2>
+<div class="outline-text-2" id="text-org6485431">
 <p>
 Dired works wonderfully right out of the box, so Dirvish is definitely more of a nice to have than a need to have. It creates an overall more aesthetically pleasing interface, adds customizable mode lines and ranger (the command line file explorer) like keybinds for those that are used to them.  
 </p>
@@ -678,9 +680,9 @@ Dired works wonderfully right out of the box, so Dirvish is definitely more of a
 </div>
 </div>
 
-<div id="outline-container-org2822870" class="outline-2">
-<h2 id="org2822870">Source Control</h2>
-<div class="outline-text-2" id="text-org2822870">
+<div id="outline-container-org3e925d8" class="outline-2">
+<h2 id="org3e925d8">Source Control</h2>
+<div class="outline-text-2" id="text-org3e925d8">
 <p>
 Just install Magit. So far I am pretty happy with the defaults, but I might look more into customizing this in the future.
 </p>
@@ -695,9 +697,9 @@ Just install Magit. So far I am pretty happy with the defaults, but I might look
 </div>
 </div>
 
-<div id="outline-container-org207f8ce" class="outline-2">
-<h2 id="org207f8ce">Programming Languages Setup</h2>
-<div class="outline-text-2" id="text-org207f8ce">
+<div id="outline-container-org315b404" class="outline-2">
+<h2 id="org315b404">Programming Languages Setup</h2>
+<div class="outline-text-2" id="text-org315b404">
 <p>
 This setup is on a new laptop and at the moment all I am doing in terms of coding is javascript/React and some very basic c coding. Hopefully this list will grow over time.
 </p>
@@ -741,9 +743,9 @@ I used to use LSP mode, but Eglot is getting added into Emacs 29 and it is light
 </div>
 </div>
 
-<div id="outline-container-org9705eff" class="outline-2">
-<h2 id="org9705eff">Org Mode</h2>
-<div class="outline-text-2" id="text-org9705eff">
+<div id="outline-container-orgada634a" class="outline-2">
+<h2 id="orgada634a">Org Mode</h2>
+<div class="outline-text-2" id="text-orgada634a">
 <p>
 It looks like there is a lot going on here, but in reality there are just a few major things going on. Font faces and visual setup, Org Roam, capture templates, a workflow screen, projects and a few other smaller things.
 </p>
@@ -1029,9 +1031,9 @@ capture was not aborted."
 </div>
 </div>
 
-<div id="outline-container-org6a5a1d9" class="outline-2">
-<h2 id="org6a5a1d9">Dashboard</h2>
-<div class="outline-text-2" id="text-org6a5a1d9">
+<div id="outline-container-orga107902" class="outline-2">
+<h2 id="orga107902">Dashboard</h2>
+<div class="outline-text-2" id="text-orga107902">
 <p>
 A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda items and some recent files. It also has integration with the same all-the-icons that Doom Modeline uses. 
 </p>
@@ -1063,9 +1065,9 @@ A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda 
 </div>
 </div>
 
-<div id="outline-container-orge83b87e" class="outline-2">
-<h2 id="orge83b87e">Website Publishing</h2>
-<div class="outline-text-2" id="text-orge83b87e">
+<div id="outline-container-orge6cb4d6" class="outline-2">
+<h2 id="orge6cb4d6">Website Publishing</h2>
+<div class="outline-text-2" id="text-orge6cb4d6">
 <p>
 Basic defaults for org HTML exports
 </p>
