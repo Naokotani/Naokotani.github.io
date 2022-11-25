@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-11-25 Fri 05:24 -->
+<!-- 2022-11-25 Fri 08:19 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Naokotani's Init.el</title>
@@ -15,27 +15,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4e860eb">System Crafters</a></li>
-<li><a href="#orgc96c1c3">Installation</a></li>
-<li><a href="#org97dfa5f">Package management and load modules</a></li>
-<li><a href="#org9d91908">Defaults</a></li>
-<li><a href="#org14a72df">Evil Mode</a></li>
-<li><a href="#org5880f3c">Themes</a></li>
-<li><a href="#org959d4ec">Spell Checking</a></li>
-<li><a href="#org393c5df">Completion</a></li>
-<li><a href="#orgbe42c7b">Dired</a></li>
-<li><a href="#orgf97e545">Source Control</a></li>
-<li><a href="#org91ea6fa">Programming Languages Setup</a></li>
-<li><a href="#org8159b2c">Org Mode</a></li>
-<li><a href="#orgb766dc1">Dashboard</a></li>
-<li><a href="#org98cf443">Website Publishing</a></li>
+<li><a href="#org8c23e38">System Crafters</a></li>
+<li><a href="#orge74d040">Installation</a></li>
+<li><a href="#org5bfbc10">Package management and load modules</a></li>
+<li><a href="#orgc0c1e8d">Defaults</a></li>
+<li><a href="#org31537f2">Evil Mode</a></li>
+<li><a href="#org7c8bd5d">Themes</a></li>
+<li><a href="#orgf1c98ff">Spell Checking</a></li>
+<li><a href="#orgca64bb6">Completion</a></li>
+<li><a href="#orgb64caca">Dired</a></li>
+<li><a href="#org8696245">Source Control</a></li>
+<li><a href="#org689326c">Programming Languages Setup</a></li>
+<li><a href="#org6b2cdde">Org Mode</a></li>
+<li><a href="#org722065e">Dashboard</a></li>
+<li><a href="#org3dac410">Website Publishing</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4e860eb" class="outline-2">
-<h2 id="org4e860eb">System Crafters</h2>
-<div class="outline-text-2" id="text-org4e860eb">
+<div id="outline-container-org8c23e38" class="outline-2">
+<h2 id="org8c23e38">System Crafters</h2>
+<div class="outline-text-2" id="text-org8c23e38">
 <p>
 First of all I would like to acknowledge that half or more of my configuration is either taken directly from, or inspired by David Wilson's System Crafters YouTube videos and streams. I wouldn't have been able to create this configuration without the channel so I highly encourage you to check it out and subscribe.
 </p>
@@ -50,9 +50,9 @@ First of all I would like to acknowledge that half or more of my configuration i
 </div>
 </div>
 
-<div id="outline-container-orgc96c1c3" class="outline-2">
-<h2 id="orgc96c1c3">Installation</h2>
-<div class="outline-text-2" id="text-orgc96c1c3">
+<div id="outline-container-orge74d040" class="outline-2">
+<h2 id="orge74d040">Installation</h2>
+<div class="outline-text-2" id="text-orge74d040">
 <p>
 In the past I had used emacs on Arch based machines, but more recently I got a laptop with windows 11 installed and decided to keep it and try out WSL to see how it handles graphical applications. So far, it seems to work pretty well and feels like the least bad way to have access to both Linux and windows on the same computer. One minor drawback is that it is a minor pain to install Arch Linux on WSL, so I opted to just stick with Ubuntu. The issue with Ubuntu is that many of the packages in the Ubuntu Repository are fairly out of date and Emacs is no exception. Luckily this is fairly easy to do.
 </p>
@@ -71,9 +71,9 @@ Another issue I ran into in the past was that WSL did not have systemD in order 
 </div>
 </div>
 
-<div id="outline-container-org97dfa5f" class="outline-2">
-<h2 id="org97dfa5f">Package management and load modules</h2>
-<div class="outline-text-2" id="text-org97dfa5f">
+<div id="outline-container-org5bfbc10" class="outline-2">
+<h2 id="org5bfbc10">Package management and load modules</h2>
+<div class="outline-text-2" id="text-org5bfbc10">
 <p>
 I use straight.el for package management so this code is necessary to install and set it up. If you want to use it with use-package blocks, you also need to add the code below. 
 </p>
@@ -108,18 +108,22 @@ Next I load the Elisp files in two directories. I made two directories to simply
 <span style="color: #ffffff;">(</span><span style="color: #b6a0ff;">require</span> '<span style="color: #00bcff;">find-lisp</span><span style="color: #ffffff;">)</span>
 
 <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">First load modules that are required as dependencies, evil mode in this case for keybinds</span>
-<span style="color: #ffffff;">(</span>mapcar <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">lambda</span> <span style="color: #3fdfd0;">(</span>fn<span style="color: #3fdfd0;">)</span> <span style="color: #3fdfd0;">(</span>load <span style="color: #fba849;">(</span>file-name-sans-extension fn<span style="color: #fba849;">)</span><span style="color: #3fdfd0;">)</span><span style="color: #ff62d4;">)</span> <span style="color: #ff62d4;">(</span>find-lisp-find-files <span style="color: #79a8ff;">"~/.config/emacs/early-modules"</span> <span style="color: #79a8ff;">"\\.el\\'"</span><span style="color: #ff62d4;">)</span><span style="color: #ffffff;">)</span>
+<span style="color: #ffffff;">(</span>mapcar <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">lambda</span> <span style="color: #3fdfd0;">(</span>fn<span style="color: #3fdfd0;">)</span>
+          <span style="color: #3fdfd0;">(</span>load <span style="color: #fba849;">(</span>file-name-sans-extension fn<span style="color: #fba849;">)</span><span style="color: #3fdfd0;">)</span><span style="color: #ff62d4;">)</span>
+        <span style="color: #ff62d4;">(</span>find-lisp-find-files <span style="color: #79a8ff;">"~/.config/emacs/early-modules"</span> <span style="color: #79a8ff;">"\\.el\\'"</span><span style="color: #ff62d4;">)</span><span style="color: #ffffff;">)</span>
 
 <span style="color: #a8a8a8; font-style: italic;">;;</span><span style="color: #a8a8a8; font-style: italic;">Then load the rest</span>
-<span style="color: #ffffff;">(</span>mapcar <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">lambda</span> <span style="color: #3fdfd0;">(</span>fn<span style="color: #3fdfd0;">)</span> <span style="color: #3fdfd0;">(</span>load <span style="color: #fba849;">(</span>file-name-sans-extension fn<span style="color: #fba849;">)</span><span style="color: #3fdfd0;">)</span><span style="color: #ff62d4;">)</span> <span style="color: #ff62d4;">(</span>find-lisp-find-files <span style="color: #79a8ff;">"~/.config/emacs/modules"</span> <span style="color: #79a8ff;">"\\.el\\'"</span><span style="color: #ff62d4;">)</span><span style="color: #ffffff;">)</span>
+<span style="color: #ffffff;">(</span>mapcar <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">lambda</span> <span style="color: #3fdfd0;">(</span>fn<span style="color: #3fdfd0;">)</span>
+          <span style="color: #3fdfd0;">(</span>load <span style="color: #fba849;">(</span>file-name-sans-extension fn<span style="color: #fba849;">)</span><span style="color: #3fdfd0;">)</span><span style="color: #ff62d4;">)</span>
+        <span style="color: #ff62d4;">(</span>find-lisp-find-files <span style="color: #79a8ff;">"~/.config/emacs/modules"</span> <span style="color: #79a8ff;">"\\.el\\'"</span><span style="color: #ff62d4;">)</span><span style="color: #ffffff;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9d91908" class="outline-2">
-<h2 id="org9d91908">Defaults</h2>
-<div class="outline-text-2" id="text-org9d91908">
+<div id="outline-container-orgc0c1e8d" class="outline-2">
+<h2 id="orgc0c1e8d">Defaults</h2>
+<div class="outline-text-2" id="text-orgc0c1e8d">
 <p>
 Here I set some built in defaults to remove things like scroll bars, menus, remove the audible bell etc. I set up auto revert mode so that buffers are automatically updated to reflect changes to files from outside emacs, such as on the command line etc. I tell Emacs what modes I would like line numbers in and finally I tell emacs to put temporary files in my <code>/tmp/</code> folder (This is one of the first things I do as I find it incredibly annoying have these files spread all through my directories.)
 </p>
@@ -167,9 +171,9 @@ Here I set some built in defaults to remove things like scroll bars, menus, remo
 </div>
 </div>
 
-<div id="outline-container-org14a72df" class="outline-2">
-<h2 id="org14a72df">Evil Mode</h2>
-<div class="outline-text-2" id="text-org14a72df">
+<div id="outline-container-org31537f2" class="outline-2">
+<h2 id="org31537f2">Evil Mode</h2>
+<div class="outline-text-2" id="text-org31537f2">
 <p>
 Pretty basic evil mode setup. Two important things that I do here are make sure that the default behavior for <code>C-h</code> and <code>C-u</code> works. The bind for <code>C-g</code> binding is a nice touch, but I haven't fully gotten used to using it.  
 </p>
@@ -205,9 +209,9 @@ Pretty basic evil mode setup. Two important things that I do here are make sure 
 </div>
 </div>
 
-<div id="outline-container-org5880f3c" class="outline-2">
-<h2 id="org5880f3c">Themes</h2>
-<div class="outline-text-2" id="text-org5880f3c">
+<div id="outline-container-org7c8bd5d" class="outline-2">
+<h2 id="org7c8bd5d">Themes</h2>
+<div class="outline-text-2" id="text-org7c8bd5d">
 <p>
 I rely heavily on Modus Themes for my theme because I really like how nicely it integrates into Emacs. I know some people are perhaps turned off by it's stark colors, but it is highly customizable and it is possible to use whatever colors you want. Doom Themes is another great package that has a lot more selection for color schemes.
 </p>
@@ -294,9 +298,9 @@ Popper probably belongs more in a window section. It creates a toggleable drawer
 </div>
 </div>
 
-<div id="outline-container-org959d4ec" class="outline-2">
-<h2 id="org959d4ec">Spell Checking</h2>
-<div class="outline-text-2" id="text-org959d4ec">
+<div id="outline-container-orgf1c98ff" class="outline-2">
+<h2 id="orgf1c98ff">Spell Checking</h2>
+<div class="outline-text-2" id="text-orgf1c98ff">
 <p>
 Here I set up the built in spell check in text mode, which comes in especially handy in org mode documents. Since that is where I use it almost exclusively, it might be worth adding it specifically to an org-mode hook, but this setup works fine for now.
 </p>
@@ -327,9 +331,9 @@ Hunspell itself is a separate command line program and has to be installed on yo
 </div>
 </div>
 
-<div id="outline-container-org393c5df" class="outline-2">
-<h2 id="org393c5df">Completion</h2>
-<div class="outline-text-2" id="text-org393c5df">
+<div id="outline-container-orgca64bb6" class="outline-2">
+<h2 id="orgca64bb6">Completion</h2>
+<div class="outline-text-2" id="text-orgca64bb6">
 <p>
 Which Key is a handy package that provides hints for key chords. When you hit a keybind it will give you possible follow up keys. The defaults work fine for me, but you can customize how long you want it to wait to give the hints. You can set it to take longer to open the buffer if you are fairly comfortable with your keybinds and don't want cluttering your screen unless your really need it. 
 </p>
@@ -586,7 +590,7 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">(setq consult-preview-key (list (kbd "&lt;S-down&gt;") (kbd "&lt;S-up&gt;")))</span>
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">For some commands and buffer sources it is useful to configure the</span>
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">:preview-key on a per-command basis using the `</span><span style="color: #00bcff; font-style: italic;">consult-customize</span><span style="color: #a8a8a8; font-style: italic;">' macro.</span>
-  <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">consult-customize</span>
+  <span style="color: #ff62d4;">(</span>consult-customize
    consult-theme <span style="color: #f78fe7;">:preview-key</span> '<span style="color: #3fdfd0;">(</span><span style="color: #f78fe7;">:debounce</span> 0.2 any<span style="color: #3fdfd0;">)</span>
    consult-ripgrep consult-git-grep consult-grep
    consult-bookmark consult-recent-file consult-xref
@@ -651,9 +655,9 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
 </div>
 </div>
 
-<div id="outline-container-orgbe42c7b" class="outline-2">
-<h2 id="orgbe42c7b">Dired</h2>
-<div class="outline-text-2" id="text-orgbe42c7b">
+<div id="outline-container-orgb64caca" class="outline-2">
+<h2 id="orgb64caca">Dired</h2>
+<div class="outline-text-2" id="text-orgb64caca">
 <p>
 Dired works wonderfully right out of the box, so Dirvish is definitely more of a nice to have than a need to have. It creates an overall more aesthetically pleasing interface, adds customizable mode lines and ranger (the command line file explorer) like keybinds for those that are used to them.  
 </p>
@@ -709,9 +713,9 @@ Dired works wonderfully right out of the box, so Dirvish is definitely more of a
 </div>
 </div>
 
-<div id="outline-container-orgf97e545" class="outline-2">
-<h2 id="orgf97e545">Source Control</h2>
-<div class="outline-text-2" id="text-orgf97e545">
+<div id="outline-container-org8696245" class="outline-2">
+<h2 id="org8696245">Source Control</h2>
+<div class="outline-text-2" id="text-org8696245">
 <p>
 Just install Magit. So far I am pretty happy with the defaults, but I might look more into customizing this in the future.
 </p>
@@ -726,9 +730,9 @@ Just install Magit. So far I am pretty happy with the defaults, but I might look
 </div>
 </div>
 
-<div id="outline-container-org91ea6fa" class="outline-2">
-<h2 id="org91ea6fa">Programming Languages Setup</h2>
-<div class="outline-text-2" id="text-org91ea6fa">
+<div id="outline-container-org689326c" class="outline-2">
+<h2 id="org689326c">Programming Languages Setup</h2>
+<div class="outline-text-2" id="text-org689326c">
 <p>
 This setup is on a new laptop and at the moment all I am doing in terms of coding is javascript/React and some very basic c coding. Hopefully this list will grow over time.
 </p>
@@ -775,9 +779,9 @@ I used to use LSP mode, but Eglot is getting added into Emacs 29 and it is light
 </div>
 </div>
 
-<div id="outline-container-org8159b2c" class="outline-2">
-<h2 id="org8159b2c">Org Mode</h2>
-<div class="outline-text-2" id="text-org8159b2c">
+<div id="outline-container-org6b2cdde" class="outline-2">
+<h2 id="org6b2cdde">Org Mode</h2>
+<div class="outline-text-2" id="text-org6b2cdde">
 <p>
 It looks like there is a lot going on here, but in reality there are just a few major things going on. Font faces and visual setup, Org Roam, capture templates, a workflow screen, projects and a few other smaller things.
 </p>
@@ -1063,9 +1067,9 @@ This section more than others is heavily inspired by System Crafters Channel and
 </div>
 </div>
 
-<div id="outline-container-orgb766dc1" class="outline-2">
-<h2 id="orgb766dc1">Dashboard</h2>
-<div class="outline-text-2" id="text-orgb766dc1">
+<div id="outline-container-org722065e" class="outline-2">
+<h2 id="org722065e">Dashboard</h2>
+<div class="outline-text-2" id="text-org722065e">
 <p>
 A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda items and some recent files. It also has integration with the same all-the-icons that Doom Modeline uses. 
 </p>
@@ -1097,14 +1101,15 @@ A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda 
 </div>
 </div>
 
-<div id="outline-container-org98cf443" class="outline-2">
-<h2 id="org98cf443">Website Publishing</h2>
-<div class="outline-text-2" id="text-org98cf443">
+<div id="outline-container-org3dac410" class="outline-2">
+<h2 id="org3dac410">Website Publishing</h2>
+<div class="outline-text-2" id="text-org3dac410">
 <p>
 Basic defaults for org HTML exports.
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #ffffff;">(</span><span style="color: #b6a0ff;">setq</span> org-html-validation-link nil            <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">Don't show validation link</span>
+
       org-html-head-include-scripts nil       <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">Use our own scripts</span>
       org-html-preamble nil
       org-html-postamble nil
