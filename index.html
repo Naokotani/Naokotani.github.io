@@ -3,205 +3,19 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-24 Thu 17:12 -->
+<!-- 2022-11-24 Thu 23:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs</title>
-<meta name="author" content="Chris-laptop" />
 <meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
-foo
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">Emacs</h1>
 
-<div id="outline-container-org30bed01" class="outline-2">
-<h2 id="org30bed01">System Crafters</h2>
-<div class="outline-text-2" id="text-org30bed01">
+<div id="outline-container-orgddbe79d" class="outline-2">
+<h2 id="orgddbe79d">System Crafters</h2>
+<div class="outline-text-2" id="text-orgddbe79d">
 <p>
 First of all I would like to acknowledge that half or more of my configuration is either taken directly from, or inspired by David Wilson's System Crafters YouTube videos and streams. I wouldn't have been able to create this configuration without the channel so I highly encourage you to check it out and subscribe.
 </p>
@@ -213,9 +27,9 @@ First of all I would like to acknowledge that half or more of my configuration i
 </div>
 </div>
 
-<div id="outline-container-org9af9b01" class="outline-2">
-<h2 id="org9af9b01">Installation</h2>
-<div class="outline-text-2" id="text-org9af9b01">
+<div id="outline-container-org3c6a7b5" class="outline-2">
+<h2 id="org3c6a7b5">Installation</h2>
+<div class="outline-text-2" id="text-org3c6a7b5">
 <p>
 In the past I had used emacs on Arch based machines, but more recently I got a laptop with windows 11 installed and decided to keep it and try out WSL to see how it handles graphical applications. So far, it seems to work pretty well and feels like the least bad way to have access to both Linux and windows on the same computer. One minor drawback is that it is a minor pain to install Arch Linux on WSL, so I opted to just stick with Ubuntu. The issue with Ubuntu is that many of the packages in the Ubuntu Repository are fairly out of date and Emacs is no exception. Luckily this is fairly easy to do.
 </p>
@@ -235,9 +49,9 @@ Another issue I ran into in the past was that WSL did not have systemD in order 
 </div>
 
 
-<div id="outline-container-orgfb348d2" class="outline-2">
-<h2 id="orgfb348d2">Package management and load modules</h2>
-<div class="outline-text-2" id="text-orgfb348d2">
+<div id="outline-container-org9969529" class="outline-2">
+<h2 id="org9969529">Package management and load modules</h2>
+<div class="outline-text-2" id="text-org9969529">
 <p>
 I use straight.el for package management so this code is necessary to install and set it up. If you want to use it with use-package blocks, you also need to add the code below. 
 </p>
@@ -282,9 +96,9 @@ Next I load the Elisp files in two directories. I made two directories to simply
 </div>
 </div>
 </div>
-<div id="outline-container-orgc3a2865" class="outline-2">
-<h2 id="orgc3a2865">Defaults</h2>
-<div class="outline-text-2" id="text-orgc3a2865">
+<div id="outline-container-org1c1ced1" class="outline-2">
+<h2 id="org1c1ced1">Defaults</h2>
+<div class="outline-text-2" id="text-org1c1ced1">
 <p>
 Here I set some built in defaults to remove things like scroll bars, menus, remove the audible bell etc. I set up auto revert mode so that buffers are automatically updated to reflect changes to files from outside emacs, such as on the command line etc. I tell Emacs what modes I would like line numbers in and finally I tell emacs to put temporary files in my <code>/tmp/</code> folder (This is one of the first things I do as I find it incredibly annoying have these files spread all through my directories.)
 </p>
@@ -333,9 +147,9 @@ Here I set some built in defaults to remove things like scroll bars, menus, remo
 </div>
 </div>
 
-<div id="outline-container-org94baa8c" class="outline-2">
-<h2 id="org94baa8c">Evil Mode</h2>
-<div class="outline-text-2" id="text-org94baa8c">
+<div id="outline-container-org3cbd360" class="outline-2">
+<h2 id="org3cbd360">Evil Mode</h2>
+<div class="outline-text-2" id="text-org3cbd360">
 <p>
 Pretty basic evil mode setup. Two important things that I do here are make sure that the default behavior for <code>C-h</code> and <code>C-u</code> works. The bind for <code>C-g</code> binding is a nice touch, but I haven't fully gotten used to using it.  
 </p>
@@ -371,9 +185,9 @@ Pretty basic evil mode setup. Two important things that I do here are make sure 
 </div>
 </div>
 
-<div id="outline-container-org5a0f97d" class="outline-2">
-<h2 id="org5a0f97d">Themes</h2>
-<div class="outline-text-2" id="text-org5a0f97d">
+<div id="outline-container-orgeb7736a" class="outline-2">
+<h2 id="orgeb7736a">Themes</h2>
+<div class="outline-text-2" id="text-orgeb7736a">
 <p>
 I rely heavily on Modus Themes for my theme because I really like how nicely it integrates into Emacs. I know some people are perhaps turned off by it's stark colors, but it is highly customizable and it is possible to use whatever colors you want. Doom Themes is another great package that has a lot more selection for color schemes.
 </p>
@@ -460,9 +274,9 @@ Popper probably belongs more in a window section. It creates a toggleable drawer
 </div>
 </div>
 
-<div id="outline-container-org3936805" class="outline-2">
-<h2 id="org3936805">Spell Checking</h2>
-<div class="outline-text-2" id="text-org3936805">
+<div id="outline-container-orgf00bb82" class="outline-2">
+<h2 id="orgf00bb82">Spell Checking</h2>
+<div class="outline-text-2" id="text-orgf00bb82">
 <p>
 Here I set up the built in spell check in text mode, which comes in especially handy in org mode documents. Since that is where I use it almost exclusively, it might be worth adding it specifically to an org-mode hook, but this setup works fine for now.
 </p>
@@ -493,9 +307,9 @@ Hunspell itself is a separate command line program and has to be installed on yo
 </div>
 </div>
 
-<div id="outline-container-org14864c1" class="outline-2">
-<h2 id="org14864c1">Completion</h2>
-<div class="outline-text-2" id="text-org14864c1">
+<div id="outline-container-org879857b" class="outline-2">
+<h2 id="org879857b">Completion</h2>
+<div class="outline-text-2" id="text-org879857b">
 <p>
 Which Key is a handy package that provides hints for key chords. When you hit a keybind it will give you possible follow up keys. The defaults work fine for me, but you can customize how long you want it to wait to give the hints. You can set it to take longer to open the buffer if you are fairly comfortable with your keybinds and don't want cluttering your screen unless your really need it. 
 </p>
@@ -806,9 +620,9 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
 </div>
 </div>
 
-<div id="outline-container-orgbb93d1f" class="outline-2">
-<h2 id="orgbb93d1f">Dired</h2>
-<div class="outline-text-2" id="text-orgbb93d1f">
+<div id="outline-container-org293bebe" class="outline-2">
+<h2 id="org293bebe">Dired</h2>
+<div class="outline-text-2" id="text-org293bebe">
 <p>
 Dired works wonderfully right out of the box, so Dirvish is definitely more of a nice to have than a need to have. It creates an overall more aesthetically pleasing interface, adds customizable mode lines and ranger (the command line file explorer) like keybinds for those that are used to them.  
 </p>
@@ -864,9 +678,9 @@ Dired works wonderfully right out of the box, so Dirvish is definitely more of a
 </div>
 </div>
 
-<div id="outline-container-org36f0979" class="outline-2">
-<h2 id="org36f0979">Source Control</h2>
-<div class="outline-text-2" id="text-org36f0979">
+<div id="outline-container-org2822870" class="outline-2">
+<h2 id="org2822870">Source Control</h2>
+<div class="outline-text-2" id="text-org2822870">
 <p>
 Just install Magit. So far I am pretty happy with the defaults, but I might look more into customizing this in the future.
 </p>
@@ -881,9 +695,9 @@ Just install Magit. So far I am pretty happy with the defaults, but I might look
 </div>
 </div>
 
-<div id="outline-container-orga9fca31" class="outline-2">
-<h2 id="orga9fca31">Programming Languages Setup</h2>
-<div class="outline-text-2" id="text-orga9fca31">
+<div id="outline-container-org207f8ce" class="outline-2">
+<h2 id="org207f8ce">Programming Languages Setup</h2>
+<div class="outline-text-2" id="text-org207f8ce">
 <p>
 This setup is on a new laptop and at the moment all I am doing in terms of coding is javascript/React and some very basic c coding. Hopefully this list will grow over time.
 </p>
@@ -927,9 +741,9 @@ I used to use LSP mode, but Eglot is getting added into Emacs 29 and it is light
 </div>
 </div>
 
-<div id="outline-container-orgeb01de7" class="outline-2">
-<h2 id="orgeb01de7">Org Mode</h2>
-<div class="outline-text-2" id="text-orgeb01de7">
+<div id="outline-container-org9705eff" class="outline-2">
+<h2 id="org9705eff">Org Mode</h2>
+<div class="outline-text-2" id="text-org9705eff">
 <p>
 It looks like there is a lot going on here, but in reality there are just a few major things going on. Font faces and visual setup, Org Roam, capture templates, a workflow screen, projects and a few other smaller things.
 </p>
@@ -1215,9 +1029,9 @@ capture was not aborted."
 </div>
 </div>
 
-<div id="outline-container-org560e54a" class="outline-2">
-<h2 id="org560e54a">Dashboard</h2>
-<div class="outline-text-2" id="text-org560e54a">
+<div id="outline-container-org6a5a1d9" class="outline-2">
+<h2 id="org6a5a1d9">Dashboard</h2>
+<div class="outline-text-2" id="text-org6a5a1d9">
 <p>
 A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda items and some recent files. It also has integration with the same all-the-icons that Doom Modeline uses. 
 </p>
@@ -1248,11 +1062,23 @@ A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda 
 </div>
 </div>
 </div>
+
+<div id="outline-container-orge83b87e" class="outline-2">
+<h2 id="orge83b87e">Website Publishing</h2>
+<div class="outline-text-2" id="text-orge83b87e">
+<p>
+Basic defaults for org HTML exports
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(setq org-html-validation-link nil            ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil) ;; Use our own styles
+
+</pre>
 </div>
-<div id="postamble" class="status">
-<p class="author">Author: Chris-laptop</p>
-<p class="date">Created: 2022-11-24 Thu 17:12</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</div>
 </div>
 </body>
 </html>
