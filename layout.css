@@ -102,6 +102,8 @@ html {
 }
 
 body {
+
+
     font-family: var(--bodyFont);
     font-weight: 400;
     line-height: 1.75;
@@ -110,11 +112,70 @@ body {
 	width: 100vw;
 }
 
-.content {
-	margin-left: 10rem;
-	margin-top: 5rem;
-	width: 80vw;
+
+@media (max-width: 1219px) {
+
+	pre.src {
+		display: inline-block;
+		padding: 1rem;
+	}
 }
+
+@media (min-width: 1220px) {
+	pre.src {
+		padding: 1rem;
+		width: 60rem;
+	}
+}
+
+@media (min-width: 1900px) {
+
+	#table-of-contents {
+		position: fixed;
+		top: 1rem;
+		right: 0;
+		padding-right: 3rem;
+		padding-left: 1rem;
+		margin-right: 1rem;
+		direction: rtl;
+		max-height: 90vh;
+		overflow-y: auto;
+	
+	}
+
+	#table-of-contents ul, h2 {
+		direction: ltr;
+	}
+
+	#table-of-contents ul {
+	}
+
+
+}
+
+@media (max-width: 2559px) {
+
+	.content {
+		margin-left: 1rem;
+		margin-top: 5rem;
+		width: 60rem;
+	}
+
+
+}
+
+@media (min-width: 2560px) {
+
+	.content {
+		margin: auto;
+		width: 60rem;
+	}
+}
+
+/* Works on Chrome, Edge, and Safari */
+#outline-container-org8c23e38 {
+}	
+	
 
 .nav {
     --headerBackground: var(--navColor);
@@ -201,7 +262,7 @@ footer p {
 
 p {
     margin-bottom: 1rem;
-    max-width: 40rem;
+    max-width: 50rem;
 }
 
 p a,
@@ -211,7 +272,10 @@ blockquote a {
     border-bottom: solid 2px var(--linkColor);
 }
 
-h1.title {border-bottom: solid 2px var(--headingColor);}
+h1.title {
+	border-bottom: solid 2px var(--headingColor);
+	width: 60rem;
+}
     
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
@@ -453,8 +517,6 @@ button.plain:hover {
 pre.src {
 	background: var(--nuancedMagenta);
 	border-radius: 5px;
-	padding: 1rem;
-	width: 60rem;
 	font-family: var(--codeFont);
 	font-size: var(--smallText);
 	box-shadow: var(--cardShadow);
