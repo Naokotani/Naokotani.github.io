@@ -138,7 +138,7 @@ body {
 		top: 12rem;
 		left: 0;
 		margin-left: 5vw;
-		padding: 3rem 3rem 3rem 1rem;
+		padding: 3rem 3rem 0 1rem;
 		margin-right: 1rem;
 		max-height: 90vh;
 		width: 20vw;
@@ -147,6 +147,10 @@ body {
 		box-shadow: var(--cardShadow);
 	}
 	
+	#table-of-contents ul li:last-child {
+		height: 8rem;
+	}
+
 	#table-of-contents a {
 		font-size: var(--h5);
 	}
@@ -157,9 +161,8 @@ body {
 	}
 
 	.content {
-		margin-left: 5vw;
+		margin-left: 30vw;
 		max-width: calc(60rem + 20vw);
-		padding-left: 25vw;
 		padding-top: 8rem;
 	}
 
