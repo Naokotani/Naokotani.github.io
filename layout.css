@@ -281,3 +281,15 @@ pre.src {
 	box-shadow: var(--cardShadow);
 	overflow-x: auto;
 }
+
+td {
+	border: var(--line);
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td, th {
+	padding: 5px 5px 0 5px;
+}
