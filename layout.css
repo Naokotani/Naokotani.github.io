@@ -22,12 +22,14 @@
     --white: #fff;
 	--nuancedMagenta: #230631;
 	--purple: #701660;
+	--lightBlue: #00d3d0;
 	--blue: #00bcff;
 	--lightMagenta: #b6a0ff;
 
 	--lightGrey: #bfbfbf;
 	--grey: #404040;
 	--darkGrey: #141414;
+	--darkerGrey: #111111;
 
 
     /*define colour intentions*/
@@ -102,29 +104,47 @@ html {
 }
 
 body {
-
-
     font-family: var(--bodyFont);
     font-weight: 400;
     line-height: 1.75;
     background: var(--background);
     color: var(--textColor);
-	width: 100vw;
 }
 
 
-@media (max-width: 1219px) {
+@media (max-width: 1899px) {
 
 	pre.src {
-		display: inline-block;
 		padding: 1rem;
+		margin: 0 auto;
+	}
+
+	.content {
+		margin: auto;
+		max-width: 90%;
+
 	}
 }
 
 @media (min-width: 1220px) {
 	pre.src {
 		padding: 1rem;
-		width: 60rem;
+		max-width: 60rem;
+	}
+
+	h1.title {
+		border-bottom: solid 2px var(--headingColor);
+		background: #111111;
+		width: 100vw;
+		height: 6rem;
+		display: block;
+		position: absolute;
+		padding-top: 2rem;
+		padding-left: 5vw;
+		padding-right: 5rem;
+		top: 0;
+		left: 0;
+		box-shadow: var(--cardShadow);
 	}
 }
 
@@ -132,33 +152,40 @@ body {
 
 	#table-of-contents {
 		position: fixed;
-		top: 1rem;
-		right: 0;
-		padding-right: 3rem;
-		padding-left: 1rem;
+		top: 12rem;
+		left: 0;
+		margin-left: 5vw;
+		padding: 3rem 3rem 3rem 1rem;
 		margin-right: 1rem;
-		direction: rtl;
 		max-height: 90vh;
+		width: 20vw;
 		overflow-y: auto;
+		background: var(--darkerGrey);
+		box-shadow: var(--cardShadow);
+	}
 	
+	#table-of-contents a {
+		font-size: var(--h5);
+	}
+	
+	#table-of-contents a:hover {
+		color: var(--lightBlue);
+		border-bottom: solid 1px var(--lightBlue);
 	}
 
-	#table-of-contents ul, h2 {
-		direction: ltr;
+	.content {
+		margin-left: 5vw;
+		max-width: calc(60rem + 20vw);
+		padding-left: 25vw;
+		padding-top: 8rem;
 	}
-
-	#table-of-contents ul {
-	}
-
 
 }
 
-@media (max-width: 2559px) {
+@media (max-width: 2559px) and (min-width: 1220px) {
 
 	.content {
-		margin-left: 1rem;
-		margin-top: 5rem;
-		width: 60rem;
+		padding-top: 8rem;
 	}
 
 
@@ -169,13 +196,9 @@ body {
 	.content {
 		margin: auto;
 		width: 60rem;
+		padding-top: 8rem;
 	}
 }
-
-/* Works on Chrome, Edge, and Safari */
-#outline-container-org8c23e38 {
-}	
-	
 
 .nav {
     --headerBackground: var(--navColor);
@@ -209,6 +232,11 @@ body {
 a {
     color: var(--blue);
     text-decoration: none;
+}
+
+a:hover {
+	color: var(--lightBlue);
+	border-bottom: solid 1px var(--lightBlue);
 }
 
 .site-logo {
@@ -267,15 +295,11 @@ p {
 
 p a,
 blockquote a {
+	display: inline;
     color: var(--blue);
     text-decoration: none;
-    border-bottom: solid 2px var(--linkColor);
 }
 
-h1.title {
-	border-bottom: solid 2px var(--headingColor);
-	width: 60rem;
-}
     
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
@@ -450,20 +474,6 @@ button.plain:hover {
     margin: 0;
 }
 
-@media only screen and (min-width: 500px) {
-    :root{
-        --baseFontSize: 112.5%;
-    }
-
-    .grid {
-        display: grid;
-    }
-
-    .flex {
-        display: flex;
-}
-}
-
 .card {
     margin: 10px;
 		background: var(--cardBg);
@@ -520,5 +530,6 @@ pre.src {
 	font-family: var(--codeFont);
 	font-size: var(--smallText);
 	box-shadow: var(--cardShadow);
+	overflow-x: auto;
 }
 

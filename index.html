@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-11-25 Fri 08:19 -->
+<!-- 2022-11-27 Sun 02:48 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Naokotani's Init.el</title>
@@ -15,44 +15,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8c23e38">System Crafters</a></li>
-<li><a href="#orge74d040">Installation</a></li>
-<li><a href="#org5bfbc10">Package management and load modules</a></li>
-<li><a href="#orgc0c1e8d">Defaults</a></li>
-<li><a href="#org31537f2">Evil Mode</a></li>
-<li><a href="#org7c8bd5d">Themes</a></li>
-<li><a href="#orgf1c98ff">Spell Checking</a></li>
-<li><a href="#orgca64bb6">Completion</a></li>
-<li><a href="#orgb64caca">Dired</a></li>
-<li><a href="#org8696245">Source Control</a></li>
-<li><a href="#org689326c">Programming Languages Setup</a></li>
-<li><a href="#org6b2cdde">Org Mode</a></li>
-<li><a href="#org722065e">Dashboard</a></li>
-<li><a href="#org3dac410">Website Publishing</a></li>
+<li><a href="#org02e01f0">System Crafters</a></li>
+<li><a href="#org44769df">Installation</a></li>
+<li><a href="#orgd63765d">Package management and load modules</a></li>
+<li><a href="#org09cfb69">Defaults</a></li>
+<li><a href="#org730ce82">Evil Mode</a></li>
+<li><a href="#org6e9412e">Themes</a></li>
+<li><a href="#org79f8bf0">Spell Checking</a></li>
+<li><a href="#orgbb85e1b">Completion</a></li>
+<li><a href="#orgf5e60c5">Dired</a></li>
+<li><a href="#org43c6eda">Source Control</a></li>
+<li><a href="#org37626e1">Programming Languages Setup</a></li>
+<li><a href="#orgf99fe76">Org Mode</a></li>
+<li><a href="#orge7b10e6">Dashboard</a></li>
+<li><a href="#org0617960">Website Publishing</a></li>
+<li><a href="#org4e06421">Projects</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8c23e38" class="outline-2">
-<h2 id="org8c23e38">System Crafters</h2>
-<div class="outline-text-2" id="text-org8c23e38">
+<div id="outline-container-org02e01f0" class="outline-2">
+<h2 id="org02e01f0">System Crafters</h2>
+<div class="outline-text-2" id="text-org02e01f0">
 <p>
 First of all I would like to acknowledge that half or more of my configuration is either taken directly from, or inspired by David Wilson's System Crafters YouTube videos and streams. I wouldn't have been able to create this configuration without the channel so I highly encourage you to check it out and subscribe.
 </p>
 
 <p>
-<a href="https://systemcrafters.net/">System Crafters Website</a>
-</p>
-
-<p>
-<a href="https://www.youtube.com/c/SystemCrafters">System Crafters Channel</a>
+<a href="https://systemcrafters.net/">System Crafters Website</a> | <a href="https://www.youtube.com/c/SystemCrafters">System Crafters Channel</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge74d040" class="outline-2">
-<h2 id="orge74d040">Installation</h2>
-<div class="outline-text-2" id="text-orge74d040">
+
+<div id="outline-container-org44769df" class="outline-2">
+<h2 id="org44769df">Installation</h2>
+<div class="outline-text-2" id="text-org44769df">
 <p>
 In the past I had used emacs on Arch based machines, but more recently I got a laptop with windows 11 installed and decided to keep it and try out WSL to see how it handles graphical applications. So far, it seems to work pretty well and feels like the least bad way to have access to both Linux and windows on the same computer. One minor drawback is that it is a minor pain to install Arch Linux on WSL, so I opted to just stick with Ubuntu. The issue with Ubuntu is that many of the packages in the Ubuntu Repository are fairly out of date and Emacs is no exception. Luckily this is fairly easy to do.
 </p>
@@ -71,9 +69,9 @@ Another issue I ran into in the past was that WSL did not have systemD in order 
 </div>
 </div>
 
-<div id="outline-container-org5bfbc10" class="outline-2">
-<h2 id="org5bfbc10">Package management and load modules</h2>
-<div class="outline-text-2" id="text-org5bfbc10">
+<div id="outline-container-orgd63765d" class="outline-2">
+<h2 id="orgd63765d">Package management and load modules</h2>
+<div class="outline-text-2" id="text-orgd63765d">
 <p>
 I use straight.el for package management so this code is necessary to install and set it up. If you want to use it with use-package blocks, you also need to add the code below. 
 </p>
@@ -121,9 +119,9 @@ Next I load the Elisp files in two directories. I made two directories to simply
 </div>
 </div>
 
-<div id="outline-container-orgc0c1e8d" class="outline-2">
-<h2 id="orgc0c1e8d">Defaults</h2>
-<div class="outline-text-2" id="text-orgc0c1e8d">
+<div id="outline-container-org09cfb69" class="outline-2">
+<h2 id="org09cfb69">Defaults</h2>
+<div class="outline-text-2" id="text-org09cfb69">
 <p>
 Here I set some built in defaults to remove things like scroll bars, menus, remove the audible bell etc. I set up auto revert mode so that buffers are automatically updated to reflect changes to files from outside emacs, such as on the command line etc. I tell Emacs what modes I would like line numbers in and finally I tell emacs to put temporary files in my <code>/tmp/</code> folder (This is one of the first things I do as I find it incredibly annoying have these files spread all through my directories.)
 </p>
@@ -171,11 +169,11 @@ Here I set some built in defaults to remove things like scroll bars, menus, remo
 </div>
 </div>
 
-<div id="outline-container-org31537f2" class="outline-2">
-<h2 id="org31537f2">Evil Mode</h2>
-<div class="outline-text-2" id="text-org31537f2">
+<div id="outline-container-org730ce82" class="outline-2">
+<h2 id="org730ce82">Evil Mode</h2>
+<div class="outline-text-2" id="text-org730ce82">
 <p>
-Pretty basic evil mode setup. Two important things that I do here are make sure that the default behavior for <code>C-h</code> and <code>C-u</code> works. The bind for <code>C-g</code> binding is a nice touch, but I haven't fully gotten used to using it.  
+Evil mode brings most of the best aspects of Vim to Emacs in a very complete way. You are able to use the default Vim key binds in most buffers and usually with very little setup needed on your end.  Two important things that I do here are make sure that the default behavior for <code>C-h</code> and <code>C-u</code> works. The bind for <code>C-g</code> binding is a nice touch, but I haven't fully gotten used to using it.  
 </p>
 
 <p>
@@ -209,9 +207,9 @@ Pretty basic evil mode setup. Two important things that I do here are make sure 
 </div>
 </div>
 
-<div id="outline-container-org7c8bd5d" class="outline-2">
-<h2 id="org7c8bd5d">Themes</h2>
-<div class="outline-text-2" id="text-org7c8bd5d">
+<div id="outline-container-org6e9412e" class="outline-2">
+<h2 id="org6e9412e">Themes</h2>
+<div class="outline-text-2" id="text-org6e9412e">
 <p>
 I rely heavily on Modus Themes for my theme because I really like how nicely it integrates into Emacs. I know some people are perhaps turned off by it's stark colors, but it is highly customizable and it is possible to use whatever colors you want. Doom Themes is another great package that has a lot more selection for color schemes.
 </p>
@@ -225,15 +223,7 @@ Popper probably belongs more in a window section. It creates a toggleable drawer
 </p>
 
 <p>
-<a href="https://protesilaos.com/emacs/modus-themes">Modus Themes homepage</a>
-</p>
-
-<p>
-<a href="https://github.com/seagle0128/doom-modeline">doom-modeline Github</a>
-</p>
-
-<p>
-<a href="https://github.com/karthink/popper">Popper Github</a>
+<a href="https://protesilaos.com/emacs/modus-themes">Modus Themes homepage </a> | <a href="https://github.com/seagle0128/doom-modeline">Doom Modeline Github</a> | <a href="https://github.com/karthink/popper">Popper Github</a>
 </p>
 
 <div class="org-src-container">
@@ -298,9 +288,9 @@ Popper probably belongs more in a window section. It creates a toggleable drawer
 </div>
 </div>
 
-<div id="outline-container-orgf1c98ff" class="outline-2">
-<h2 id="orgf1c98ff">Spell Checking</h2>
-<div class="outline-text-2" id="text-orgf1c98ff">
+<div id="outline-container-org79f8bf0" class="outline-2">
+<h2 id="org79f8bf0">Spell Checking</h2>
+<div class="outline-text-2" id="text-org79f8bf0">
 <p>
 Here I set up the built in spell check in text mode, which comes in especially handy in org mode documents. Since that is where I use it almost exclusively, it might be worth adding it specifically to an org-mode hook, but this setup works fine for now.
 </p>
@@ -331,9 +321,9 @@ Hunspell itself is a separate command line program and has to be installed on yo
 </div>
 </div>
 
-<div id="outline-container-orgca64bb6" class="outline-2">
-<h2 id="orgca64bb6">Completion</h2>
-<div class="outline-text-2" id="text-orgca64bb6">
+<div id="outline-container-orgbb85e1b" class="outline-2">
+<h2 id="orgbb85e1b">Completion</h2>
+<div class="outline-text-2" id="text-orgbb85e1b">
 <p>
 Which Key is a handy package that provides hints for key chords. When you hit a keybind it will give you possible follow up keys. The defaults work fine for me, but you can customize how long you want it to wait to give the hints. You can set it to take longer to open the buffer if you are fairly comfortable with your keybinds and don't want cluttering your screen unless your really need it. 
 </p>
@@ -359,23 +349,7 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
 </p>
 
 <p>
-<a href="https://github.com/minad/consult">Consult Github</a>
-</p>
-
-<p>
-<a href="https://github.com/emacs-straight/marginalia">Marginalia Github</a>
-</p>
-
-<p>
-<a href="https://github.com/oantolin/orderless">Orderless Github</a>
-</p>
-
-<p>
-<a href="https://github.com/minad/corfu">Corfu Github</a>
-</p>
-
-<p>
-<a href="https://github.com/oantolin/embark">Embark Github</a>
+<a href="https://github.com/minad/consult">Consult Github</a> | <a href="https://github.com/emacs-straight/marginalia">Marginalia Github</a> | <a href="https://github.com/oantolin/orderless">Orderless Github</a> | <a href="https://github.com/minad/corfu">Corfu Github</a> | <a href="https://github.com/oantolin/embark">Embark Github</a>
 </p>
 
 <div class="org-src-container">
@@ -590,7 +564,7 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">(setq consult-preview-key (list (kbd "&lt;S-down&gt;") (kbd "&lt;S-up&gt;")))</span>
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">For some commands and buffer sources it is useful to configure the</span>
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">:preview-key on a per-command basis using the `</span><span style="color: #00bcff; font-style: italic;">consult-customize</span><span style="color: #a8a8a8; font-style: italic;">' macro.</span>
-  <span style="color: #ff62d4;">(</span>consult-customize
+  <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">consult-customize</span>
    consult-theme <span style="color: #f78fe7;">:preview-key</span> '<span style="color: #3fdfd0;">(</span><span style="color: #f78fe7;">:debounce</span> 0.2 any<span style="color: #3fdfd0;">)</span>
    consult-ripgrep consult-git-grep consult-grep
    consult-bookmark consult-recent-file consult-xref
@@ -613,8 +587,8 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
   <span style="color: #a8a8a8; font-style: italic;">;;;; </span><span style="color: #a8a8a8; font-style: italic;">1. project.el (the default)</span>
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">(setq consult-project-function #'consult--default-project--function)</span>
   <span style="color: #a8a8a8; font-style: italic;">;;;; </span><span style="color: #a8a8a8; font-style: italic;">2. projectile.el (projectile-project-root)</span>
-  <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">(autoload 'projectile-project-root "projectile")</span>
-  <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">(setq consult-project-function (lambda (_) (projectile-project-root)))</span>
+  <span style="color: #ff62d4;">(</span>autoload 'projectile-project-root <span style="color: #79a8ff;">"projectile"</span><span style="color: #ff62d4;">)</span>
+  <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">setq</span> consult-project-function <span style="color: #3fdfd0;">(</span><span style="color: #b6a0ff;">lambda</span> <span style="color: #fba849;">(</span>_<span style="color: #fba849;">)</span> <span style="color: #fba849;">(</span>projectile-project-root<span style="color: #fba849;">)</span><span style="color: #3fdfd0;">)</span><span style="color: #ff62d4;">)</span>
   <span style="color: #a8a8a8; font-style: italic;">;;;; </span><span style="color: #a8a8a8; font-style: italic;">3. vc.el (vc-root-dir)</span>
   <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">(setq consult-project-function (lambda (_) (vc-root-dir)))</span>
   <span style="color: #a8a8a8; font-style: italic;">;;;; </span><span style="color: #a8a8a8; font-style: italic;">4. locate-dominating-file</span>
@@ -655,9 +629,9 @@ In addition to Vertico I use Marginalia, Corfu, Orderless, Consult and Embark. M
 </div>
 </div>
 
-<div id="outline-container-orgb64caca" class="outline-2">
-<h2 id="orgb64caca">Dired</h2>
-<div class="outline-text-2" id="text-orgb64caca">
+<div id="outline-container-orgf5e60c5" class="outline-2">
+<h2 id="orgf5e60c5">Dired</h2>
+<div class="outline-text-2" id="text-orgf5e60c5">
 <p>
 Dired works wonderfully right out of the box, so Dirvish is definitely more of a nice to have than a need to have. It creates an overall more aesthetically pleasing interface, adds customizable mode lines and ranger (the command line file explorer) like keybinds for those that are used to them.  
 </p>
@@ -713,9 +687,9 @@ Dired works wonderfully right out of the box, so Dirvish is definitely more of a
 </div>
 </div>
 
-<div id="outline-container-org8696245" class="outline-2">
-<h2 id="org8696245">Source Control</h2>
-<div class="outline-text-2" id="text-org8696245">
+<div id="outline-container-org43c6eda" class="outline-2">
+<h2 id="org43c6eda">Source Control</h2>
+<div class="outline-text-2" id="text-org43c6eda">
 <p>
 Just install Magit. So far I am pretty happy with the defaults, but I might look more into customizing this in the future.
 </p>
@@ -730,9 +704,9 @@ Just install Magit. So far I am pretty happy with the defaults, but I might look
 </div>
 </div>
 
-<div id="outline-container-org689326c" class="outline-2">
-<h2 id="org689326c">Programming Languages Setup</h2>
-<div class="outline-text-2" id="text-org689326c">
+<div id="outline-container-org37626e1" class="outline-2">
+<h2 id="org37626e1">Programming Languages Setup</h2>
+<div class="outline-text-2" id="text-org37626e1">
 <p>
 This setup is on a new laptop and at the moment all I am doing in terms of coding is javascript/React and some very basic c coding. Hopefully this list will grow over time.
 </p>
@@ -742,11 +716,7 @@ I used to use LSP mode, but Eglot is getting added into Emacs 29 and it is light
 </p>
 
 <p>
-<a href="https://github.com/joaotavora/eglot">Eglot Github</a>
-</p>
-
-<p>
-<a href="https://emacs-lsp.github.io/lsp-mode/">LSP mode website</a>
+<a href="https://github.com/joaotavora/eglot">Eglot Github</a>  | <a href="https://emacs-lsp.github.io/lsp-mode/">LSP mode website</a>
 </p>
 
 <div class="org-src-container">
@@ -779,9 +749,9 @@ I used to use LSP mode, but Eglot is getting added into Emacs 29 and it is light
 </div>
 </div>
 
-<div id="outline-container-org6b2cdde" class="outline-2">
-<h2 id="org6b2cdde">Org Mode</h2>
-<div class="outline-text-2" id="text-org6b2cdde">
+<div id="outline-container-orgf99fe76" class="outline-2">
+<h2 id="orgf99fe76">Org Mode</h2>
+<div class="outline-text-2" id="text-orgf99fe76">
 <p>
 It looks like there is a lot going on here, but in reality there are just a few major things going on. Font faces and visual setup, Org Roam, capture templates, a workflow screen, projects and a few other smaller things.
 </p>
@@ -1067,9 +1037,9 @@ This section more than others is heavily inspired by System Crafters Channel and
 </div>
 </div>
 
-<div id="outline-container-org722065e" class="outline-2">
-<h2 id="org722065e">Dashboard</h2>
-<div class="outline-text-2" id="text-org722065e">
+<div id="outline-container-orge7b10e6" class="outline-2">
+<h2 id="orge7b10e6">Dashboard</h2>
+<div class="outline-text-2" id="text-orge7b10e6">
 <p>
 A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda items and some recent files. It also has integration with the same all-the-icons that Doom Modeline uses. 
 </p>
@@ -1101,9 +1071,9 @@ A simple "dashboard" splash screen for emacs. Nothing flashy, just gives agenda 
 </div>
 </div>
 
-<div id="outline-container-org3dac410" class="outline-2">
-<h2 id="org3dac410">Website Publishing</h2>
-<div class="outline-text-2" id="text-org3dac410">
+<div id="outline-container-org0617960" class="outline-2">
+<h2 id="org0617960">Website Publishing</h2>
+<div class="outline-text-2" id="text-org0617960">
 <p>
 Basic defaults for org HTML exports.
 </p>
@@ -1121,6 +1091,26 @@ Basic defaults for org HTML exports.
 
 <span style="color: #a8a8a8; font-style: italic;">;; </span><span style="color: #a8a8a8; font-style: italic;">Used to maintain syntax highlighting in html exports</span>
 <span style="color: #ffffff;">(</span><span style="color: #b6a0ff;">use-package</span> <span style="color: #00bcff;">htmlize</span><span style="color: #ffffff;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4e06421" class="outline-2">
+<h2 id="org4e06421">Projects</h2>
+<div class="outline-text-2" id="text-org4e06421">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+<span style="color: #ffffff;">(</span><span style="color: #b6a0ff;">use-package</span> <span style="color: #00bcff;">projectile</span>
+  <span style="color: #f78fe7;">:straight</span> t
+  <span style="color: #f78fe7;">:init</span>
+  <span style="color: #ff62d4;">(</span>projectile-mode +1<span style="color: #ff62d4;">)</span>
+  <span style="color: #f78fe7;">:config</span>
+  <span style="color: #ff62d4;">(</span><span style="color: #b6a0ff;">setq</span> projectile-switch-project-action #'projectile-dired<span style="color: #ff62d4;">)</span>
+  <span style="color: #f78fe7;">:bind</span> <span style="color: #ff62d4;">(</span><span style="color: #f78fe7;">:map</span> projectile-mode-map
+              <span style="color: #3fdfd0;">(</span><span style="color: #79a8ff;">"s-p"</span> . projectile-command-map<span style="color: #3fdfd0;">)</span>
+              <span style="color: #3fdfd0;">(</span><span style="color: #79a8ff;">"C-c p"</span> . projectile-command-map<span style="color: #3fdfd0;">)</span><span style="color: #ff62d4;">)</span><span style="color: #ffffff;">)</span>
+
 </pre>
 </div>
 </div>
