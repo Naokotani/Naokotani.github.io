@@ -17,8 +17,6 @@
 :root {
     /*Define colours as colours*/
 
-    --red: #ff0003;
-    --yellow: #fde24f;
     --white: #fff;
 	--nuancedMagenta: #230631;
 	--purple: #701660;
@@ -34,25 +32,14 @@
 
     /*define colour intentions*/
 
-    --primary: var(--grey);
-    --danger: var(--red);
     --background: var(--darkGrey);
     --textColor: var(--lightGrey);
     --lineColor: var(--blue);
 	--linkColor: var(--blue);
 	--headingColor: var(--lightMagenta);
 
-    --cardBg: var(--darkGrey);
-	--cardText: var(--white);
-
     --blockquoteBg: var(--lightGrey);
 	--blockquoteText: var(--black);
-
-	--buttonColor: var(--lightOrange);
-    --buttonTextColor: var(--white);
-
-	--navTextColor: var(--white);
-	--navColor: var(--grey);
 
 	--footerColor: var(--darkGrey);
 	--footerText: var(--white);
@@ -73,19 +60,12 @@
     --smallText: 0.8rem;
 
     /*Elevation*/
-    --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --level-2: 0 4px 6px -1px rgba(112, 22, 96, 0.1), 0 2px 4px -1px rgba(112, 22, 98, 0.06);
-    --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 	--cardShadow: 0 2px 18px rgb(0 0 0 / 20%);
-	--cardTransition: box-shadow 200ms;
 
     /* Positioning */
     --containerPadding: 2.5%;
-    --headerHeight: 4rem;
     --borderRadius: 5px;
 	--footerHeight: 5rem;
-	--headerFooterHeight: calc(var(--headerHeight) + var(--footerHeight));
 }
 
 
@@ -111,6 +91,9 @@ body {
     color: var(--textColor);
 }
 
+.content {
+	padding-bottom: 5rem;
+}
 
 @media (max-width: 1899px) {
 
@@ -187,8 +170,6 @@ body {
 	.content {
 		padding-top: 8rem;
 	}
-
-
 }
 
 @media (min-width: 2560px) {
@@ -200,35 +181,6 @@ body {
 	}
 }
 
-.nav {
-    --headerBackground: var(--navColor);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: var(--white);
-    height: var(--headerHeight);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 var(--containerPadding);
-		z-index: 10;
-		-webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
-
-}
-
-.scroll-down {
-	background: var(--navColor);
-  box-shadow: var(--level-2);
-}	
-
-.scroll-top {
-	background: none;
-}
-
 a {
     color: var(--blue);
     text-decoration: none;
@@ -237,30 +189,6 @@ a {
 a:hover {
 	color: var(--lightBlue);
 	border-bottom: solid 1px var(--lightBlue);
-}
-
-.site-logo {
-	font-size: var(--h3);
-	margin: 0;
-}	
-
-.site-logo-flair {
-	font-size: var(--h4);
-	margin: 0;
-}
-
-header nav a {
-    color: var(--white);
-    text-decoration: none;
-		font-size: var(--h5);
-}
-
-header nav a:hover {
-    border-bottom: solid 1px var(--white);
-}
-
-header nav a + a {
-    margin-left: 10px;
 }
 
 footer {
@@ -275,17 +203,6 @@ footer {
 footer a {
     text-decoration: none;
     color: var(--footerTextColor);
-}
-
-footer nav {
-	padding: 0.5rem;
-}
-
-footer a + a {
-    margin-left: 5px;
-}
-footer p {
-    max-width: 0;
 }
 
 p {
@@ -339,27 +256,9 @@ ul {
 		list-style-type: circle;
 }	
 
-label {
-    display: block;
-    font-size: var(--smallText);
-}
-
-input, textarea {
-    border: var(--line);
-    border-radius: 4px;
-    padding: 2px 5px;
-}
 
 ::placeholder {
     color: var(--medGreyBlue);
-}
-
-textarea {
-    width: 100%;
-    height: 5rem;
-}
-selector {
-    border: var(--line);
 }
 
 hr {
@@ -371,159 +270,6 @@ figure {
 	margin: 0;
 }
 
-button {
-    --buttonColor: var(--primary);
-
-    appearance: none;
-    color: var(--white);
-    background-color: var(--buttonColor);
-    border: none;
-    margin: 2px;
-    border-radius: 5px;
-    padding: 5px 25px;
-    box-shadow: var(--level-2);
-    transition: 0.3s ease-in-out box-shadow;
-}
-
-button:hover {
-    box-shadow:var(--level-2);
-    border: solid 2px var(--medGreyBlue);
-    margin: 0;
-}
-
-button[disabled] {
-    opacity: 0.4;
-    border: none;
-    margin: 2px;
-}
-
-button.cancel {
-    --buttonColor: var(--danger);
-    --textColor: var(--white);
-}
-
-button.small {
-    font-size: var(--smallText);
-}
-
-button.plain {
-		padding: 5px;
-		background: var(--cardBackground);
-		box-shadow: none;
-		margin: 0;
-		display: block;
-		color: var(--textColor);
-}
-
-button.plain:hover {
-		box-shadow: none;
-		border: none;
-}
-
-
-.layout {
-    padding: calc(3rem + var(--headerHeight))var(--containerPadding);
-		min-height: calc(100vh - var(--footerHeight));
-	
-}
-
-.grid {
-    --gridCols: 2;
-    /*display grid in media query*/
-    display: block;
-    grid-template-columns: repeat(var(--gridCols), 1fr);
-    gap: 5px;
-}
-
-.aside-right {
-    grid-template-columns: 67% 33%;
-    grid-gap: 20px;
-}
-
-.aside-left {
-    grid-template-columns: 33% 67%;
-    grid-gap: 20px;
-}
-
-.cols-3 {
-    --gridCols: 3;
-}
-
-.cols-4 {
-    --gridCols: 4;
-}
-
-.flex {
-    --justifyContent: space-between;
-    /*display flex in media query*/
-    display: block;
-    justify-content: var(--justifyContent);
-}
-
-.flex-start {
-    justify-content: start;
-}
-
-
-.flex-around {
-    --justifyContent: space-around;
-}
-
-.fake-logo {
-    font-size: var(--baseFontSize);
-    margin: 0;
-}
-
-.card {
-    margin: 10px;
-		background: var(--cardBg);
-		color: var(--cardText);
-    padding: 1em;
-    border-radius: var(--borderRadius);
-		--primary: var(--darkBlue);
-}
-
-.card-transparent-stable {
-	background: rgba(20,20,20,0.9);
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-}
-
-.card-transparent {
-	background: rgba(20,20,20,0.8);
-	transition: background 200ms;
-	transition: box-shadow 200ms;
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-}
-
-.card-transparent:hover {
-	background: rgba(20,20,20,0.9);
-	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-}
-
-.card a {
-	color: var(--white);
-}
-
-.card > *:first-child {
-    margin-top: 0;
-}
-
-.card > *:last-child {
-    margin-bottom: 0;
-}
-
-.text__danger {
-    color: var(--danger);
-}
-
-.underline {
-    border-bottom: solid 1px var(--textColor);
-}
-
-.pointer {
-    cursor: pointer;
-}
-
 pre.src {
 	background: var(--nuancedMagenta);
 	border-radius: 5px;
@@ -532,4 +278,3 @@ pre.src {
 	box-shadow: var(--cardShadow);
 	overflow-x: auto;
 }
-
