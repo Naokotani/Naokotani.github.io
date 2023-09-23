@@ -24,6 +24,15 @@
   --line: solid 2px var(--lineColor);
   --headerHeight: 5rem;
   --containerPadding: 2.5%;
+
+  /*Elevations*/
+
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --cardShadow: 0 2px 18px rgb(34 34 34 / 20%);
+  --cardTransition: box-shadow 200ms;
 }
 
 html {font-size: 100%;} /*16px*/
@@ -85,6 +94,7 @@ header nav {
   -moz-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  box-shadow: var(--level-3);
 }
 
 header nav a {
@@ -100,4 +110,38 @@ td,
 th {
   border: var(--line);
   padding: 10px 20px;
+}
+
+button {
+    --buttonColor: var(--yellow);
+    appearance: none;
+    color: var(--black);
+    background-color: var(--buttonColor);
+    border: none;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 5px 25px;
+    box-shadow: var(--level-2);
+    transition: 0.3s ease-in-out box-shadow;
+}
+
+button:hover {
+    box-shadow:var(--level-3);
+    border: solid 2px var(--darkGreen);
+    margin: 0px;
+}
+
+button[disabled] {
+    opacity: 0.4;
+    border: none;
+    margin: 2px;
+}
+
+button.cancel {
+    --buttonColor: var(--danger);
+    --textColor: var(--white);
+}
+
+button.small {
+    font-size: var(--smallText);
 }
