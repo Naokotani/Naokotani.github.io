@@ -21,6 +21,7 @@
   --textColor: var(--black);
   --lineColor: var(--purple);
   --headerText: var(--beige);
+  --cardBg: var(--darkBeige);
 
   /*Styles*/
   --line: solid 2px var(--lineColor);
@@ -85,7 +86,7 @@ h5 {font-size: var(--h5);}
 small, .text_small {font-size: var(--smallText);}
 
 .layout {
-  padding: calc(3rem + var(--headerHeight))var(--containerPadding);
+  padding: 1rem var(--containerPadding);
   min-height: calc(100vh - var(--footerHeight));
 }
 
@@ -142,6 +143,11 @@ th {
   padding: 10px 20px;
 }
 
+tr.header {
+	background: var(--darkGreen);
+	color: var(--lightGreen);
+}
+
 tr.green {
 	background: var(--lightGreen); 
 }
@@ -162,20 +168,29 @@ button {
   box-shadow: var(--level-2);
   transition: 0.3s ease-in-out box-shadow;
   margin: 2px;
-  margin-bottom: calc(1rem + 2px);
 }
 
 button:hover {
   box-shadow:var(--level-3);
   border: solid 2px var(--darkGreen);
   margin: 0px;
-  margin-bottom: 1rem;
 }
 
 button[disabled] {
   opacity: 0.4;
   border: none;
   margin: 2px;
+}
+
+.splash-image img {
+	width: 100%
+}
+
+.splash-image {
+	margin-top: var(--headerHeight);
+	width: 100%;
+	height: calc(100vh - var(--headerHeight));
+	overflow: hidden;
 }
 
 button.cancel {
@@ -185,4 +200,73 @@ button.cancel {
 
 button.small {
   font-size: var(--smallText);
+}
+
+aside img {
+	max-width: 100%;
+}
+
+img.banner {
+	width: 100%;
+	border-radius: 5px;
+	margin: 2rem 0 2rem 0;
+}
+
+.unit-form div {
+	margin-bottom: 0.5rem;
+}
+
+.unit-form {
+	height: auto;
+}
+
+.unit-form input {
+	background: var(--lightGreen);
+	border-radius: 3px;
+}
+
+.grid {
+    --gridCols: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--gridCols), 1fr);
+    gap: 5px;
+}
+
+.grid img {
+	margin-bottom: 1rem;
+}
+
+.aside-right {
+    grid-template-columns: 66% 32%;
+    grid-gap: 2%;
+}
+
+.aside-left {
+    grid-template-columns: 32% 66%;
+    grid-gap: 2%;
+}
+
+.underline {
+	border-bottom: var(--line);
+}
+
+.cols-3 {
+    --gridCols: 3;
+}
+
+.cols-4 {
+    --gridCols: 4;
+}
+
+.card p, h3, h4, h5 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.card {
+  background: var(--cardBg);
+  color: var(--cardText);
+  padding: 2rem;
+  border-radius: 3px;
+  border: var(--line);
 }
