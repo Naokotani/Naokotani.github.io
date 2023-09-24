@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400|Mulish:400');
-
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400|Mulish:400|UnifrakturMaguntia:400');
 :root {
   /*Color pallette*/
   --lightGreen: #DFE8AC;
@@ -39,6 +38,7 @@
   /* Fonts */
   --headingFont: 'Archivo', sans-serif;
   --bodyFont: 'Roboto', sans-serif;
+  --quoteFont: 'UnifrakturMaguntia', cursive;
   --baseFontSize: 100%;
   --h1: 3.052rem;
   --h2: 2.441rem;
@@ -191,6 +191,24 @@ button[disabled] {
 	width: 100%;
 	height: calc(100vh - var(--headerHeight));
 	overflow: hidden;
+}
+
+.splash-quote-one {
+	font-family: var(--quoteFont);
+	position: absolute;
+	top: 275px;
+	left: 4%;
+	z-index: 5;
+	font-size: var(--h1);
+}
+
+.splash-quote-two {
+	font-family: var(--quoteFont);
+	position: absolute;
+	top: 350px;
+	right: 5%;
+	z-index: 5;
+	width: 300px;
 }
 
 button.cancel {
