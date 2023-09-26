@@ -205,6 +205,7 @@ img.banner {
 	width: 100%;
 	border-radius: 5px;
 	margin: 2rem 0 2rem 0;
+	display: none;
 }
 
 .unit-form div {
@@ -279,7 +280,19 @@ img.banner {
 	display: none;
 }
 
-@media only screen and (min-width: 1920px) {
+aside {
+	display: flex;
+	align-self: center;
+	flex: auto;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.unit-form div {
+	display: grid;
+}
+
+@media only screen and (min-width: 1300px) {
     .grid {
         display: grid;
     }
@@ -295,6 +308,12 @@ img.banner {
 		overflow: hidden;
 		display: block;
 	}
+	
+	@keyframes fadeInDelay {
+		0% { opacity: 0; }
+		50% { opacity: 0; }
+		100% { opacity: 1; }
+	}
 
 	.splash-quote-one {
 		font-family: var(--quoteFont);
@@ -304,6 +323,10 @@ img.banner {
 		z-index: 5;
 		font-size: var(--h1);
 		display: block;
+		color: var(--beige);
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: black;
+		animation: fadeIn 5s;
 	}
 
 	.splash-quote-two {
@@ -315,6 +338,68 @@ img.banner {
 		width: 300px;
 		font-size: var(--h2);
 		display: block;
+		color: var(--lightGreen);
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: black;
+		animation: fadeInDelay 4s;
 	}
 
+	img.banner {
+		display: block;
+	}
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInDelay {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeInDelay {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeInDelay {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeInDelay {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeInDelay {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
