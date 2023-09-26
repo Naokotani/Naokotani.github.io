@@ -138,6 +138,7 @@ They stalk forward with guns blazing, mercilessly mowing down rank after rank of
 					<tr class="header">
 						<th>Unit</th>
 						<th>Number</th>
+						<th>Type</th>
 						<th colspan="2">Loadout</th>
 					</tr>
 					</thead>
@@ -145,42 +146,49 @@ They stalk forward with guns blazing, mercilessly mowing down rank after rank of
 						<tr class="beige">
 							<td>Lord Felthius</td>
 							<td>1</td>
+							<td>Leader</td>
 							<td>Plague Reaper, Decimation Orb</td>
 							<td><button>Remove</button></td>
 						</tr>
 						<tr class="green">
 							<td>Malignnant Plaguecaster</td>
 							<td>1</td>
+							<td>Character</td>
 							<td>Plague Staff</td>
 							<td><button>Remove</button></td>
 						</tr>
 						<tr class="beige">
 							<td>Foul Blightspawn</td>
 							<td>1</td>
+							<td>Character</td>
 							<td>Plague Sprayer</td>
 							<td><button>Remove</button></td>
 						</tr>
 						<tr class="green">
 							<td>Plague Marines</td>
 							<td>7</td>
+							<td>Infantry</td>
 							<td>Bolter, Plague Clever, Plague Flail, Blight Laucher</td>
 							<td><button>Remove</button></td>
 						</tr>
 						<tr class="beige">
 							<td>Myphitic Blighthauler</td>
 							<td>3</td>
+							<td>Vehicle</td>
 							<td>Metla Gun, Krak Missles</td>
 							<td><button>Remove</button></td>
 						</tr>
 						<tr class="green">
 							<td>Feotid Bloatdrone</td>
 							<td>1</td>
+							<td>Vehicle</td>
 							<td>Grinder</td>
 							<td><button>Remove</button></td>
 						</tr>
 						<tr class="beige">
 							<td>Blightlord Terminators</td>
 							<td>5</td>
+							<td>Infantry</td>
 							<td>Plague Sword, Plague Axe, Combi Bolter</td>
 							<td><button>Remove</button></td>
 						</tr>
@@ -200,7 +208,19 @@ They stalk forward with guns blazing, mercilessly mowing down rank after rank of
 							<label for="loadout">Unit Loadout:</label>
 							<input name="loadout" id="loadout" type="text" value="">
 						</div>
-						<button>Add Unit</button>
+						<div class="grid">
+							<label for="type">Unit Type:</label>
+							<select id="type" name="type">
+								<option value="character">Character</option>
+								<option value="infantry">Infantry</option>
+								<option value="vehicle">Vehicle</option>
+							</select>
+						</div>
+							<label for="leader">Leader:</label>
+							<input name="leader" id="leader" type="checkbox" value="">
+						<div>
+							<button type="submit">Add Unit</button>
+						</div>
 					</form>
 				</div>
 			</div>
