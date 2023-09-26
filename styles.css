@@ -15,7 +15,6 @@
   --black: #121212;
 
   /*Color Intentions*/
-
   --background: var(--green);
   --textColor: var(--black);
   --lineColor: var(--purple);
@@ -61,7 +60,6 @@ body {
 /*Typography*/
 
 p {margin-bottom: 1rem;}
-
 
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
@@ -127,7 +125,6 @@ header nav li {
 	display: inline;
 }
 
-
 header nav li + li {
 	margin-left: 1rem;
 }
@@ -138,6 +135,7 @@ table {
   border: var(--line);
   box-shadow: var(--level-3);
 }
+
 td,
 th {
   padding: 10px 20px;
@@ -159,8 +157,6 @@ tr.green {
 tr.beige {
 	background: var(--darkBeige);
 }
-
-
 
 button {
   --buttonColor: var(--yellow);
@@ -231,14 +227,18 @@ img.banner {
 	float: left;
 }
 
-.unit-form button {
-	
-}
-
 .grid {
     --gridCols: 2;
     grid-template-columns: repeat(var(--gridCols), 1fr);
     gap: 5px;
+}
+
+.cols-3 {
+    --gridCols: 3;
+}
+
+.cols-4 {
+    --gridCols: 4;
 }
 
 .grid img {
@@ -259,25 +259,17 @@ img.banner {
 	border-bottom: var(--line);
 }
 
-.cols-3 {
-    --gridCols: 3;
-}
-
-.cols-4 {
-    --gridCols: 4;
-}
-
 .card p, h3, h4, h5 {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
 .card {
-  background: var(--cardBg);
-  color: var(--cardText);
-  padding: 2rem;
-  border-radius: 3px;
-  border: var(--line);
+	background: var(--cardBg);
+	color: var(--cardText);
+	padding: 2rem;
+	border-radius: 3px;
+	border: var(--line);
 }
 
 .splash-image {
@@ -299,7 +291,6 @@ aside {
 	width: 100%;
 	justify-content: space-around;
 }
-
 
 @media only screen and (min-width: 1300px) {
     .grid {
@@ -359,56 +350,56 @@ aside {
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-moz-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-o-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-ms-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
-@keyframes fadeInDelay {
-  0% { opacity: 0; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframeses fadeInDelay {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-moz-keyframes fadeInDelay {
-  0% { opacity: 0; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-webkit-keyframes fadeInDelay {
-  0% { opacity: 0; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-o-keyframes fadeInDelay {
-  0% { opacity: 0; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 @-ms-keyframes fadeInDelay {
-  0% { opacity: 0; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
 }
