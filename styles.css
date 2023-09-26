@@ -115,6 +115,10 @@ header nav a {
   font-size: var(--h5);
 }
 
+header nav a:hover {
+	border-bottom: solid 1px var(--headerText);
+}
+
 header nav h1 {
   color: var(--headerText);
   font-size: var(--h3);
@@ -182,30 +186,29 @@ button[disabled] {
   margin: 2px;
 }
 
-.splash-image img {
-	width: 100%
-}
-
-
-button.cancel {
-  --buttonColor: var(--danger);
-  --textColor: var(--white);
-}
-
-button.small {
-  font-size: var(--smallText);
-}
-
 aside img {
 	max-width: 100%;
 	max-height: 500px;
+	border-radius: 2px;
 }
 
-img.banner {
+aside {
+	display: flex;
+	align-self: center;
+	flex: auto;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.banner {
 	width: 100%;
 	border-radius: 5px;
 	margin: 2rem 0 2rem 0;
 	display: none;
+}
+
+.splash-image img {
+	width: 100%
 }
 
 .unit-form div {
@@ -225,6 +228,10 @@ img.banner {
 
 .unit-form input[for="leader"] {
 	float: left;
+}
+
+.unit-form select {
+	width: 228px;
 }
 
 .grid {
@@ -284,15 +291,14 @@ img.banner {
 	display: none;
 }
 
-aside {
-	display: flex;
-	align-self: center;
-	flex: auto;
-	width: 100%;
-	justify-content: space-around;
+
+.button {
+	margin-left: -2px;
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1500px) {
+	html {font-size: 110%}
+
     .grid {
         display: grid;
     }
